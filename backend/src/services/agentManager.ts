@@ -159,7 +159,6 @@ export class AgentManager {
   }
 
   private createVersionSnapshot(agent: Agent, changelog: string): AgentVersion {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { versions: _versions, ...snapshot } = agent;
     return {
       version: agent.version,

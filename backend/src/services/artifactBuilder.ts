@@ -614,7 +614,7 @@ export interface ValidationResult {
       const category = categories[i % categories.length];
       const status = statuses[i % statuses.length];
       const unit = units[i % units.length];
-      const value = (Math.random() * 1000).toFixed(2);
+      const value = ((i * 47.13) % 1000).toFixed(2);
       const date = new Date(Date.now() - i * 24 * 60 * 60 * 1000).toLocaleDateString();
       rows.push([
         `${i.toString().padStart(3, '0')}`,

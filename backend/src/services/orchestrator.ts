@@ -89,7 +89,7 @@ export class Orchestrator {
       return { result, artifact };
     } catch (error) {
       const failedStep = steps.find(s => s.status === 'running');
-      if (failedStep) failedStep.status = 'pending';
+      if (failedStep) failedStep.status = 'skipped';
       result.status = 'failed';
       result.error = error instanceof Error ? error.message : 'Unknown error';
       throw error;
