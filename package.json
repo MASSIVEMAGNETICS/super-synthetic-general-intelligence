@@ -11,10 +11,12 @@
     "build": "npm run build:backend && npm run build:frontend",
     "test:backend": "cd backend && npm test",
     "test": "npm run test:backend",
-    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "sim": "cd simulation && npx ts-node src/index.ts"
   },
   "workspaces": [
     "backend",
-    "frontend"
+    "frontend",
+    "simulation"
   ]
 }

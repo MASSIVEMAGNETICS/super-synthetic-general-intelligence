@@ -5,3 +5,5 @@ frontend/dist/
 .DS_Store
 .env
 .env.local
+simulation/snapshots/*.json
+simulation/dist/
