@@ -1,0 +1,21 @@
+{
+  "name": "victorseed-simulation",
+  "version": "1.0.0",
+  "description": "VictorSeed-1 Small-Town Simulation — Veridion Hollow",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npx ts-node src/index.ts",
+    "build": "tsc",
+    "sim": "npx ts-node src/index.ts"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "@types/uuid": "^9.0.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
