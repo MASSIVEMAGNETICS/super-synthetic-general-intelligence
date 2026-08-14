@@ -1,0 +1,29 @@
+name: Agency Kernel
+
+on:
+  pull_request:
+    paths:
+      - "packages/agency-kernel/**"
+      - "package.json"
+      - ".github/workflows/agency-kernel.yml"
+  push:
+    branches: [main]
+    paths:
+      - "packages/agency-kernel/**"
+      - "package.json"
+
+jobs:
+  verified-vertical-slice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install agency-kernel dependencies
+        working-directory: packages/agency-kernel
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Build and test verified vertical slice
+        working-directory: packages/agency-kernel
+        run: npm test
