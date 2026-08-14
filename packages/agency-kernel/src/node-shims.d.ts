@@ -16,6 +16,19 @@ declare module "node:fs" {
   export function writeFileSync(path: string, data: string, options?: { encoding?: string; flag?: string }): void;
 }
 
+declare module "node:child_process" {
+  export interface ChildProcess {
+    readonly exitCode: number | null;
+    readonly signalCode: string | null;
+    kill(signal?: string): boolean;
+    on(event: "exit", listener: (code: number | null, signal: string | null) => void): this;
+  }
+  export function spawn(command: string, args: readonly string[], options?: {
+    env?: Readonly<Record<string, string | undefined>>;
+    stdio?: "ignore" | "inherit";
+  }): ChildProcess;
+}
+
 declare module "node:path" {
   export const sep: string;
   export function dirname(path: string): string;
@@ -41,3 +54,10 @@ declare module "node:assert/strict" {
 declare module "node:test" {
   export default function test(name: string, fn: () => void | Promise<void>): void;
 }
+
+declare const process: {
+  readonly argv: string[];
+  readonly execPath: string;
+  readonly env: Readonly<Record<string, string | undefined>>;
+  exitCode?: number;
+};

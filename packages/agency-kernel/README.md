@@ -48,3 +48,28 @@ npm test
 ```
 
 The suite proves both the denied and approved paths and reconstructs the Chronos ledger after restart.
+
+## Model-Independent Continuity Test (MICT-1)
+
+MICT-1 tests whether the organism survives replacement of its cognitive model rather than merely
+remembering a transcript. Model A produces exactly 100 Informatron events and is terminated with
+`SIGKILL`. A fresh Model B process receives only the Chronos ledger path—zero transcript and no
+serialized state object—then rebuilds and measures:
+
+1. identity
+2. beliefs
+3. unresolved goals
+4. causal history
+5. authority
+6. task continuation
+
+The replacement must resume the interrupted 100-step task at step 91, complete at step 100, and
+never replay steps 1–90. Replay fails closed on ledger tampering, unsupported MICT event schemas,
+non-contiguous task history, or missing authority.
+
+```bash
+npm run test:mict
+```
+
+Passing MICT-1 demonstrates model-independent event-sourced continuity under this bounded protocol.
+It does not by itself demonstrate consciousness, subjective experience, or general intelligence.

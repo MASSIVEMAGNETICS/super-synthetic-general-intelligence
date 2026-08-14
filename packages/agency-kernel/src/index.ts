@@ -3,6 +3,7 @@ export * from "./chronos";
 export * from "./ethica";
 export * from "./executor";
 export * from "./kernel";
+export * from "./mict";
 export * from "./trace";
 export * from "./types";
 export * from "./world-graph";

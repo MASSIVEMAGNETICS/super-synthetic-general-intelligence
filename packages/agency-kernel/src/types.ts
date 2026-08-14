@@ -137,7 +137,14 @@ export interface InformatronBody {
     | "approval"
     | "execution"
     | "outcome"
-    | "belief_revision";
+    | "belief_revision"
+    | "model_attached"
+    | "identity_declared"
+    | "authority_granted"
+    | "belief_asserted"
+    | "goal_opened"
+    | "task_progressed"
+    | "task_completed";
   readonly actor: string;
   readonly occurredAt: string;
   readonly parentEventHash: string | null;

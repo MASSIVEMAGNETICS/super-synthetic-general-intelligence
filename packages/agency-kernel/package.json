@@ -9,7 +9,8 @@
   "scripts": {
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
     "build": "npm run clean && tsc -p tsconfig.json",
-    "test": "npm run build && node --test dist/tests/*.test.js"
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "test:mict": "npm run build && node --test dist/tests/mict.test.js"
   },
   "devDependencies": {
     "typescript": "^5.7.2"
